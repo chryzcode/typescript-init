@@ -14,7 +14,7 @@ app.use(appRouter)
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Welcome to Express & TypeScript Server");
+  res.send("A TS app");
 });
  
 const start = async () => {
