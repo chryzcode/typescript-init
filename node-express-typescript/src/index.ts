@@ -1,5 +1,6 @@
 import express, { Express, Request, Response, Application } from "express";
 import dotenv from "dotenv";
+import bodyParser from "body-parser";
 
 import appRouter from "./routes/app" 
 
@@ -11,7 +12,8 @@ const port = process.env.PORT || 8000;
 
 app.use(appRouter)
 
-app.use(express.json());
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req: Request, res: Response) => {
   res.send("A TS app");
