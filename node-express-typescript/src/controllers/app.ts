@@ -13,12 +13,7 @@ export const testApi = async (req: any, res: any) => {
   if (!message) {
     throw new Error("Message input is required");
   }
-  const completion = await openai.chat.completions.create({
-    messages: [{ role: "system", content: message }],
-    model: "gpt-3.5-turbo",
-  });
-  console.log(completion.choices[0]);
-  res.status(StatusCodes.OK).json({ completion });
+ 
 };
 
 export const test = async (req: Request, res: any) => {
